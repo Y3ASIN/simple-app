@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./Shop.css";
+import Product from "../PRODUCT/Product";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -12,13 +13,15 @@ const Shop = () => {
       .then((data) => setProducts(data));
   }, []);
   return (
-    <div>
-      <h1>This is shop</h1>
-      <ul>
-        {products.map((product) => (
-          <li key="product.id"> {product.name} </li>
-        ))}
-      </ul>
+    <div className="shop-container">
+      <div className="product-container">       
+          {products.map((product) => (
+            <Product key="product.id" products={product} ></Product>
+          ))}
+      </div>
+      <div className="cart-container">
+        <h3>This is cart</h3>
+      </div>
     </div>
   );
 };

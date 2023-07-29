@@ -1,6 +1,7 @@
 import Header from "./COMPONENTS/HEADER/Header";
 import Shop from "./COMPONENTS/SHOP/Shop";
 
+
 function App() {
   return (
     <div>
